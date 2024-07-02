@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
 import Header from "../components/Header";
 import { useState, useEffect } from "react";
+import Image from "next/image";
+import Carousel from "../components/carousel/Carousel";
 
 // This is the main part of our app
 const Home: NextPage = () => {
@@ -24,15 +26,42 @@ const Home: NextPage = () => {
     setMessage(messages[randomIndex]);
   });
 
-  //Pick random message from the list
+  //List of images
+  const imageItems = [
+    <Image
+      src="/public/demonslayer.jpg"
+      alt="card image"
+      className="h-full w-full"
+    />,
+    <Image
+      src="/public/faliureframe.jpg"
+      alt="card image"
+      className="h-full w-full"
+    />,
+    <Image
+      src="/public/onepiece.jpg"
+      alt="card image"
+      className="h-full w-full"
+    />,
+    <Image src="/public/alya.jpg" alt="card image" className="h-full w-full" />,
+    <Image src="/public/jjk.jpg" alt="card image" className="h-full w-full" />,
+    <Image
+      src="/public/joblessre.png"
+      alt="card image"
+      className="h-full w-full"
+    />,
+  ];
 
   return (
     <div>
       <Header />
       <div className="mbb-10 flex flex-col justify-center space-y-6">
         <h1 className="text-4xl font-semibold md:text-5xl">{message}</h1>
-        <p className="text-center text-xs opacity-75">Weebs glad to have you🖐️</p>
+        <p className="text-center text-xs opacity-75">
+          Weebs glad to have you🖐️
+        </p>
       </div>
+      <Carousel items={imageItems} width={} height={} />
     </div>
   );
 };

@@ -41,6 +41,30 @@ const Carousel = ({ width, height, items }: CarouselProps) => {
           {item}
         </CarouselItem>
       ))}
+
+
+      {/** Next Button */}
+
+      {activeIndex < items.length - 1 && (
+        <button
+          className="carousel-btn-switch-card-right carousel-btn-switch-card"
+          onClick={handleNextItemButton}>
+          <IoIosArrowBack
+          style={{ transform: "rotate(180deg)" }}
+          />
+          </button>
+      )}
+
+      {/** Indicators */}
+
+      <CarouselIndicater
+        activeIndex={activeIndex}
+        length={items.length}
+        onSetActiveIndex={(activeIndex) => {
+        setActiveIndex(activeIndex);
+        }}>
+        
+      </CarouselIndicater>
     </div>
   );
 };
