@@ -3,6 +3,13 @@ import Header from "../components/Header";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Carousel from "../components/carousel/Carousel";
+import card1 from "../public/demonslayer.jpg";
+import card2 from "../public/garndson.jpg";
+import card3 from "../public/onepiece.jpg";
+import card4 from "../public/alya.jpg";
+import card5 from "../public/jjk.jpg";
+import card6 from "../public/joblessre.png";
+import Head from "next/head";
 
 // This is the main part of our app
 const Home: NextPage = () => {
@@ -28,40 +35,31 @@ const Home: NextPage = () => {
 
   //List of images
   const imageItems = [
-    <Image
-      src="/public/demonslayer.jpg"
-      alt="card image"
-      className="h-full w-full"
-    />,
-    <Image
-      src="/public/faliureframe.jpg"
-      alt="card image"
-      className="h-full w-full"
-    />,
-    <Image
-      src="/public/onepiece.jpg"
-      alt="card image"
-      className="h-full w-full"
-    />,
-    <Image src="/public/alya.jpg" alt="card image" className="h-full w-full" />,
-    <Image src="/public/jjk.jpg" alt="card image" className="h-full w-full" />,
-    <Image
-      src="/public/joblessre.png"
-      alt="card image"
-      className="h-full w-full"
-    />,
+    <Image src={card1} alt="card image" className="h-full w-full" />,
+    <Image src={card2} alt="card image" className="h-full w-full" />,
+    <Image src={card3} alt="card image" className="h-full w-full" />,
+    <Image src={card4} alt="card image" className="h-full w-full" />,
+    <Image src={card5} alt="card image" className="h-full w-full" />,
+    <Image src={card6} alt="card image" className="h-full w-full" />,
   ];
 
   return (
-    <div>
-      <Header />
-      <div className="mbb-10 flex flex-col justify-center space-y-6">
-        <h1 className="text-4xl font-semibold md:text-5xl">{message}</h1>
-        <p className="text-center text-xs opacity-75">
-          Weebs glad to have you🖐️
-        </p>
-      </div>
-      <Carousel items={imageItems} width={} height={} />
+    <div className="h-screen w-screen overflow-hidden bg-bg text-white">
+      <Head>
+        <title>This is SibuFlix.</title>
+        <link rel="icon" href="logo.svg" />
+      </Head>
+      <Header className="fixed top-0 z-20 w-full" />
+
+      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 pt-20 text-center">
+        <div className="mbb-10 flex flex-col justify-center space-y-6">
+          <h1 className="text-4xl font-semibold md:text-5xl">{message}</h1>
+          <p className="text-center text-xs opacity-75">
+            Weebs glad to have you🖐️
+          </p>
+        </div>
+        <Carousel items={imageItems} />
+      </main>
     </div>
   );
 };

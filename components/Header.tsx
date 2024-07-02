@@ -3,7 +3,12 @@ import React from "react";
 import logo from "../public/logo.svg";
 import Link from "next/link";
 
-const Header = () => {
+
+export interface HeaderProps{
+  className: string
+}
+
+const Header = ({className}: HeaderProps) => {
   return (
     <header className="mb-16 flex h-16 w-screen items-center justify-center pt-16">
       <div className="flex items-center justify-center md:ml-10 md:w-1/5">

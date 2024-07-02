@@ -13,7 +13,7 @@ const CarouselItem = ({ index, activeIndex, children }: CardProps) => {
   const absOffset = Math.sign(offset);
   const cssTransformProperties = `
         rotateY(calc(${offset} * 55deg))
-        scaleY(calc(1+ ${absOffset} * -0.5))
+        scaleY(calc( 1 + ${absOffset} * -0.5))
         translateX(calc(${direction} * -3.5rem))
         translateZ(calc(${absOffset} * -35rem))
         scale(${scaled && index === activeIndex ? 6.5 : 1})
@@ -31,7 +31,7 @@ const CarouselItem = ({ index, activeIndex, children }: CardProps) => {
         transform: cssTransformProperties,
         opacity: cssOpacity,
         display: cssDisplay,
-        zIndex: `${scaled ? 100 : 1}`, 
+        zIndex: `${scaled ? 100 : 1}`,
       }}
       onClick={() => setScaled(!scaled)}
     >

@@ -10,7 +10,7 @@ export interface CarouselProps {
 }
 const Carousel = ({ width, height, items }: CarouselProps) => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
-  const [, set] = useState();
+  // const [, set] = useState();
 
   function handlePrevItemButton() {
     setActiveIndex((prevIndex) => {
@@ -20,7 +20,7 @@ const Carousel = ({ width, height, items }: CarouselProps) => {
 
   function handleNextItemButton() {
     setActiveIndex((prevIndex) => {
-      return prevIndex + 1 >= items.length ? prevIndex + 1 : prevIndex;
+      return prevIndex + 1 < items.length ? prevIndex + 1 : prevIndex;
     });
   }
 
